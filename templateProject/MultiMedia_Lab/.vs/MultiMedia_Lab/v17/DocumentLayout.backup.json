@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\_013_MultiMedia\\_MultiMedia_EngMahmoud_Lab_\\emptyProject\\MultiMedia_Lab\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{26F16C8C-6286-4DCC-9208-4A3FB04B5EC3}|MultiMedia_Lab\\MultiMedia_Lab.vcxproj|E:\\_013_MultiMedia\\_MultiMedia_EngMahmoud_Lab_\\emptyProject\\MultiMedia_Lab\\MultiMedia_Lab\\MultiMedia_Lab.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{26F16C8C-6286-4DCC-9208-4A3FB04B5EC3}|MultiMedia_Lab\\MultiMedia_Lab.vcxproj|solutionrelative:MultiMedia_Lab\\MultiMedia_Lab.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MultiMedia_Lab.cpp",
+              "DocumentMoniker": "E:\\_013_MultiMedia\\_MultiMedia_EngMahmoud_Lab_\\emptyProject\\MultiMedia_Lab\\MultiMedia_Lab\\MultiMedia_Lab.cpp",
+              "RelativeDocumentMoniker": "MultiMedia_Lab\\MultiMedia_Lab.cpp",
+              "ToolTip": "E:\\_013_MultiMedia\\_MultiMedia_EngMahmoud_Lab_\\emptyProject\\MultiMedia_Lab\\MultiMedia_Lab\\MultiMedia_Lab.cpp",
+              "RelativeToolTip": "MultiMedia_Lab\\MultiMedia_Lab.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-02-22T19:30:34.337Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

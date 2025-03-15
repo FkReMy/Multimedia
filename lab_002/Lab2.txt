@@ -1,0 +1,120 @@
+/*
+    SFML : Simple and Fast Multimedia Library
+    SFML/Audio.hpp : Includes the necessary header files for audio-related functionalities like playing music.
+	Graphics.hpp   : contains declarations for classes and functions related to 2D graphics
+*/
+#include <SFML/Audio.hpp>
+#include <SFML/Graphics.hpp>
+
+using namespace sf;
+int main(){
+
+    /*
+        RenderWindow : is a class from SFML that represents a window on the screen where you can draw graphics
+                     : its contructor get:
+                                            1- VideoMode
+                                            2- window title
+        VideoMode : VideoMode is a class that defines the resolution of the window.
+    */
+    RenderWindow window(
+        VideoMode(1500, 800), 
+        "sfml window"
+    );
+
+	/*
+		Load a sprite to display
+		Texture texture; : Creates a sf::Texture object, which stores the image data.
+		texture.loadFromFile("x1.jpg"): Loads the image from the file "x1.jpg". If the file cannot be loaded, the function returns false, and the program exits.
+		Sprite sprite(texture); : Creates a Sprite object, which is used to draw the texture on the window.
+	*/
+	Texture texture;
+	if (!texture.loadFromFile("x1.jpg"))
+		return -1;
+	Sprite sprite(texture);
+	
+	/*
+		Create a graphical text to display
+		Font font; : Creates a sf::Font object, which stores the font data.
+		font.loadFromFile("arial.ttf") : Loads the font from the file "arial.ttf". If the file cannot be loaded, the program exits.
+		Text text("Hello SFML", font, 50); : Creates a sf::Text object, which stores the text to be displayed, the font to use, and the character size (50).
+	*/
+	Font font;
+	if (!font.loadFromFile("arial.ttf"))
+		return -1;
+	Text text("Hello SFML", font, 50);
+
+	/*
+		Load a music to play
+		Music sound; : Creates an sf::Music object, which handles playing audio files.
+		sound.openFromFile("x.ogg") : Loads the audio from the file "x.ogg". If the file cannot be loaded, the program exits.
+		sound.play(); : Starts playing the music.
+		sound.setPlayingOffset(seconds(2.f)); : Sets the playback position to 2 seconds into the audio.
+		sound.pause(); : Pauses the music.
+		sound.play(); : Resumes the music.
+		sound.stop(); : Stops the music and rewinds it to the beginning.
+	*/
+	Music sound;
+	if (!sound.openFromFile("x.ogg"))
+		return -1;
+
+	// Play the music
+	sound.play();
+	//// advance to 2 seconds
+	sound.setPlayingOffset(seconds(2.f));
+	//// pause playback
+	sound.pause();
+	//// resume playback
+	sound.play();
+	//// stop playback and rewind
+	sound.stop();
+
+    /*
+        This is a function that returns 
+            true if the window is open 
+            and 
+            false if it has been closed. 
+            This loop forms the main event loop of the application.
+    */
+    while (window.isOpen()){
+
+        /*
+            Event : is a class that represents an event that has occurred, such as a key press, mouse movement, or window closing.
+        */
+        Event event;
+
+        /*
+            window.pollEvent(event) : This function retrieves the next event from the event queue and stores it in the event variable.
+                                        it returns:
+                                                    true if an event was retrieved
+                                                    and
+                                                    false if the event queue is empty.
+        */
+        while (window.pollEvent(event)) {
+            
+            /*
+                event.type: This accesses the type of the event.
+                Event::Closed: This is a constant that represents the event of the window being closed (Ex., by clicking the close button)
+            */
+            if (event.type == Event::Closed) {
+                window.close(); // This function closes the window.
+            }
+        }
+
+        /*
+            This function clears the contents of the window, filling it with a default color (usually black). This is necessary to prepare the window for drawing the next frame.
+        */
+        window.clear();
+		
+		// Draw the sprite
+		window.draw(sprite);
+
+		// Draw the string
+		window.draw(text);
+
+        /*
+            window.display(): This function displays the contents of the back buffer on the screen. This makes the changes you've drawn visible.
+        */
+        window.display();
+    }
+    return 0;
+}
